@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elite Signal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()">🌗</button>
+<button class="buy-membership" onclick="showQR()">💎 Membership</button>
+
+<div class="app-card">
+  <div class="header">
+    <h1>ELITE SIGNAL</h1>
+    <a class="join-telegram" href="https://t.me/elitetraderxyz" target="_blank">Join Telegram</a>
+  </div>
+
+  <!-- UI Elements -->
+  <label>Platform</label>
+  <select id="platform">
+    <option>EUR/USD</option>
+    <option>Crypto IDX</option>
+    <option>EUR/CAD</option>
+  </select>
+  <label>Min Accuracy</label>
+  <select id="min-accuracy">
+    <option>70</option>
+    <option>75</option>
+    <option>80</option>
+  </select>
+  <label>Max Accuracy</label>
+  <select id="max-accuracy">
+    <option>85</option>
+    <option>90</option>
+    <option>95</option>
+    <option>100</option>
+  </select>
+  <label>Expiration</label>
+  <select id="expiration">
+    <option>1min</option>
+    <option>5min</option>
+    <option>10min</option>
+    <option>30min</option>
+  </select>
+  <label>Strategy</label>
+  <select id="strategy">
+    <option>Breakout Trading</option>
+    <option>Momentum Trading</option>
+    <option>Growth Trading</option>
+  </select>
+  <label>Investment Growth</label>
+  <select id="investment">
+    <option>10%</option>
+    <option>20%</option>
+    <option>50%</option>
+    <option>100%</option>
+  </select>
+
+  <button class="generate" onclick="startGenerate()">Generate Signal</button>
+  <div id="signal-container"></div>
+</div>
+
+<!-- Access Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <h3>Enter Access Key</h3>
+    <input type="password" id="key-input" placeholder="Enter your key" />
+    <button onclick="verifyKey()">Submit</button>
+  </div>
+</div>
+
+<!-- QR Modal -->
+<div class="qr-overlay" id="qr-overlay">
+  <div class="qr-modal">
+    <h3>Scan to Pay ₹1999</h3>
+    <img class="qr-img" src="https://i.ibb.co/rfQnmKj/photo-6309905646656537418-y.jpg" alt="Membership QR">
+    <div class="loading">Waiting for confirmation...</div>
+    <button onclick="document.getElementById('qr-overlay').style.display='none'">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
